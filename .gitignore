@@ -1,0 +1,27 @@
+node_modules/
+.pnpm-store/
+
+# Taro outputs
+dist/
+.temp/
+.cache/
+.swc/
+
+# Env / secrets
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Editor / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test
+coverage/

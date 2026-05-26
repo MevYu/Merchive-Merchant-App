@@ -1,0 +1,102 @@
+{
+  "login": {
+    "title": "ChainEngine Merchant",
+    "subtitle": "Guide · Manager · Franchisee · Owner",
+    "tenantLabel": "Tenant ID",
+    "tenantPlaceholder": "Enter tenant_id",
+    "tenantRequired": "Tenant ID is required",
+    "wxLogin": "Sign in with WeChat",
+    "loggingIn": "Signing in...",
+    "wxCodeMissing": "wx.login returned no code",
+    "roleRejected": "This account has no merchant permissions",
+    "policy": "By signing in you agree to the Merchant ToS"
+  },
+  "dashboard": {
+    "navTitle": "Dashboard",
+    "greetingMorning": "Good morning",
+    "greetingAfternoon": "Good afternoon",
+    "greetingEvening": "Good evening",
+    "todayKpi": "Today",
+    "kpi": {
+      "sales": "Sales",
+      "customers": "Customers",
+      "orders": "Orders",
+      "aov": "AOV"
+    },
+    "weekTrend": "Last 7 days",
+    "ranking": "Ranking",
+    "rankStore": "#{{n}} in store",
+    "rankMe": "Personal rank #{{n}}",
+    "tasks": "Tasks",
+    "task": {
+      "callback": "Follow-ups",
+      "pickup": "Pickup",
+      "shipping": "Shipping"
+    },
+    "shortcuts": "Shortcuts",
+    "mockBanner": "Mock data (replace with /me/guide-stats)"
+  },
+  "customers": {
+    "navTitle": "Customers",
+    "searchPlaceholder": "Search phone / name",
+    "filterAll": "All",
+    "filterFollow": "Follow-up",
+    "filterVip": "VIP",
+    "empty": "No customers",
+    "detailTitle": "Customer",
+    "orderHistory": "Order history",
+    "noOrders": "No orders yet",
+    "recommend": "Recommend",
+    "im": "Start chat",
+    "tag": {
+      "L1": "L1 New",
+      "L2": "L2 Active",
+      "L3": "L3 Loyal",
+      "L4": "L4 VIP"
+    }
+  },
+  "orders": {
+    "newNavTitle": "Place Order",
+    "listNavTitle": "My Placed Orders",
+    "step1": "Customer",
+    "step2": "Items",
+    "step3": "Preview",
+    "pickCustomer": "Pick customer",
+    "addSku": "Add SKU",
+    "discountPreview": "Discount preview",
+    "subtotal": "Subtotal",
+    "discount": "Discount",
+    "total": "Total",
+    "submit": "Submit",
+    "submittedTip": "Order placed; awaiting customer payment",
+    "empty": "No placed orders",
+    "status": {
+      "pending_pay": "Pending pay",
+      "paid": "Paid",
+      "shipped": "Shipped",
+      "done": "Done",
+      "cancelled": "Cancelled"
+    }
+  },
+  "recommend": {
+    "navTitle": "Recommendation",
+    "memberInput": "Customer ID / phone",
+    "go": "Generate",
+    "resultTitle": "Recommended for this customer",
+    "empty": "Enter a customer to generate",
+    "send": "Send to customer"
+  },
+  "handover": {
+    "navTitle": "Shift Handover",
+    "currentShift": "Current shift",
+    "startTime": "Started at",
+    "sales": "Shift sales",
+    "orders": "Shift orders",
+    "cash": "Cash to deposit",
+    "startShift": "Start shift",
+    "endShift": "End shift",
+    "history": "Shift history",
+    "noShift": "No active shift",
+    "confirmEnd": "End the current shift?"
+  }
+}

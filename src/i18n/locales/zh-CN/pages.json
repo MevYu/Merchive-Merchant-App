@@ -1,0 +1,102 @@
+{
+  "login": {
+    "title": "ChainEngine 商家端",
+    "subtitle": "导购 · 店长 · 加盟商 · 老板",
+    "tenantLabel": "租户 ID",
+    "tenantPlaceholder": "请输入 tenant_id",
+    "tenantRequired": "请填写租户 ID",
+    "wxLogin": "微信一键登录",
+    "loggingIn": "登录中...",
+    "wxCodeMissing": "wx.login 未返回 code",
+    "roleRejected": "当前账号无商家端权限",
+    "policy": "登录即表示同意《商家服务协议》"
+  },
+  "dashboard": {
+    "navTitle": "业绩看板",
+    "greetingMorning": "早上好",
+    "greetingAfternoon": "下午好",
+    "greetingEvening": "晚上好",
+    "todayKpi": "今日业绩",
+    "kpi": {
+      "sales": "销售额",
+      "customers": "客户数",
+      "orders": "订单数",
+      "aov": "客单价"
+    },
+    "weekTrend": "近 7 日趋势",
+    "ranking": "排名",
+    "rankStore": "本店第 {{n}} 名",
+    "rankMe": "我个人第 {{n}} 名",
+    "tasks": "任务清单",
+    "task": {
+      "callback": "待回访",
+      "pickup": "待提货",
+      "shipping": "待发货"
+    },
+    "shortcuts": "快捷入口",
+    "mockBanner": "示例数据（接 /me/guide-stats 后替换）"
+  },
+  "customers": {
+    "navTitle": "客户",
+    "searchPlaceholder": "搜手机号 / 姓名",
+    "filterAll": "全部",
+    "filterFollow": "待跟进",
+    "filterVip": "VIP",
+    "empty": "暂无客户",
+    "detailTitle": "客户详情",
+    "orderHistory": "订单历史",
+    "noOrders": "暂无订单",
+    "recommend": "推荐商品",
+    "im": "发起会话",
+    "tag": {
+      "L1": "L1 新客",
+      "L2": "L2 活跃",
+      "L3": "L3 忠诚",
+      "L4": "L4 VIP"
+    }
+  },
+  "orders": {
+    "newNavTitle": "代客下单",
+    "listNavTitle": "我代下的订单",
+    "step1": "选客户",
+    "step2": "加 SKU",
+    "step3": "预览 & 提交",
+    "pickCustomer": "选择客户",
+    "addSku": "添加商品",
+    "discountPreview": "优惠预览",
+    "subtotal": "小计",
+    "discount": "优惠",
+    "total": "应付",
+    "submit": "提交订单",
+    "submittedTip": "已下单，等待客户支付",
+    "empty": "暂无代下订单",
+    "status": {
+      "pending_pay": "待支付",
+      "paid": "已支付",
+      "shipped": "已发货",
+      "done": "已完成",
+      "cancelled": "已取消"
+    }
+  },
+  "recommend": {
+    "navTitle": "推荐工具",
+    "memberInput": "客户 ID / 手机号",
+    "go": "生成推荐",
+    "resultTitle": "为该客户推荐",
+    "empty": "请输入客户后生成推荐",
+    "send": "发送给客户"
+  },
+  "handover": {
+    "navTitle": "交接班",
+    "currentShift": "当前班次",
+    "startTime": "开始时间",
+    "sales": "本班销售",
+    "orders": "本班订单",
+    "cash": "现金应缴",
+    "startShift": "开始班次",
+    "endShift": "结束班次",
+    "history": "班次历史",
+    "noShift": "尚未开班",
+    "confirmEnd": "确认结束当前班次？"
+  }
+}

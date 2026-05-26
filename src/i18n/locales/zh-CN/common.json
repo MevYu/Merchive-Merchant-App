@@ -1,0 +1,48 @@
+{
+  "brand": {
+    "title": "ChainEngine",
+    "subtitle": "商家工作台",
+    "shortName": "商家"
+  },
+  "actions": {
+    "ok": "确定",
+    "cancel": "取消",
+    "submit": "提交",
+    "save": "保存",
+    "back": "返回",
+    "next": "下一步",
+    "prev": "上一步",
+    "loading": "加载中...",
+    "delete": "删除",
+    "edit": "编辑",
+    "refresh": "刷新",
+    "search": "搜索",
+    "filter": "筛选"
+  },
+  "menu": {
+    "dashboard": "业绩",
+    "customers": "客户",
+    "orders": "代下单",
+    "recommend": "推荐",
+    "handover": "交接班",
+    "logout": "退出登录",
+    "switchStore": "切换门店"
+  },
+  "role": {
+    "STORE_STAFF": "导购",
+    "STORE_MGR": "店长",
+    "FRANCHISEE": "加盟商",
+    "TENANT_ADMIN": "租户管理员",
+    "OWNER": "老板"
+  },
+  "lang": {
+    "zh-CN": "中文",
+    "en-US": "English",
+    "ja-JP": "日本語"
+  },
+  "auth": {
+    "wrongAccountTitle": "请用商家账号登录",
+    "wrongAccountBody": "当前账号不是商家端账号（导购 / 店长 / 加盟商 / 老板），请退出后重新登录。",
+    "needLogin": "请先登录"
+  }
+}
