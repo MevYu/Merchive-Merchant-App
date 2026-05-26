@@ -1,0 +1,102 @@
+{
+  "login": {
+    "title": "ChainEngine 店舗",
+    "subtitle": "スタッフ · 店長 · 加盟店 · オーナー",
+    "tenantLabel": "テナント ID",
+    "tenantPlaceholder": "tenant_id を入力",
+    "tenantRequired": "テナント ID が必要",
+    "wxLogin": "WeChat でログイン",
+    "loggingIn": "ログイン中...",
+    "wxCodeMissing": "wx.login が code を返しません",
+    "roleRejected": "このアカウントには店舗権限がありません",
+    "policy": "ログインで店舗利用規約に同意"
+  },
+  "dashboard": {
+    "navTitle": "業績ダッシュボード",
+    "greetingMorning": "おはよう",
+    "greetingAfternoon": "こんにちは",
+    "greetingEvening": "こんばんは",
+    "todayKpi": "本日",
+    "kpi": {
+      "sales": "売上",
+      "customers": "顧客",
+      "orders": "注文",
+      "aov": "客単価"
+    },
+    "weekTrend": "直近 7 日",
+    "ranking": "ランキング",
+    "rankStore": "店内 {{n}} 位",
+    "rankMe": "個人 {{n}} 位",
+    "tasks": "タスク",
+    "task": {
+      "callback": "フォロー",
+      "pickup": "受取",
+      "shipping": "発送"
+    },
+    "shortcuts": "ショートカット",
+    "mockBanner": "モックデータ（/me/guide-stats 接続後置換）"
+  },
+  "customers": {
+    "navTitle": "顧客",
+    "searchPlaceholder": "電話／名前で検索",
+    "filterAll": "全て",
+    "filterFollow": "要フォロー",
+    "filterVip": "VIP",
+    "empty": "顧客なし",
+    "detailTitle": "顧客詳細",
+    "orderHistory": "注文履歴",
+    "noOrders": "注文なし",
+    "recommend": "おすすめ",
+    "im": "チャット開始",
+    "tag": {
+      "L1": "L1 新規",
+      "L2": "L2 アクティブ",
+      "L3": "L3 ロイヤル",
+      "L4": "L4 VIP"
+    }
+  },
+  "orders": {
+    "newNavTitle": "代理注文",
+    "listNavTitle": "代理注文一覧",
+    "step1": "顧客選択",
+    "step2": "商品追加",
+    "step3": "確認",
+    "pickCustomer": "顧客を選ぶ",
+    "addSku": "SKU を追加",
+    "discountPreview": "割引プレビュー",
+    "subtotal": "小計",
+    "discount": "割引",
+    "total": "合計",
+    "submit": "送信",
+    "submittedTip": "注文しました。お客様の支払いを待っています",
+    "empty": "代理注文なし",
+    "status": {
+      "pending_pay": "支払待",
+      "paid": "支払済",
+      "shipped": "発送済",
+      "done": "完了",
+      "cancelled": "キャンセル"
+    }
+  },
+  "recommend": {
+    "navTitle": "おすすめ",
+    "memberInput": "顧客 ID / 電話",
+    "go": "生成",
+    "resultTitle": "この顧客への提案",
+    "empty": "顧客を入力して生成",
+    "send": "顧客へ送信"
+  },
+  "handover": {
+    "navTitle": "引き継ぎ",
+    "currentShift": "現在のシフト",
+    "startTime": "開始時刻",
+    "sales": "シフト売上",
+    "orders": "シフト注文",
+    "cash": "現金預入",
+    "startShift": "シフト開始",
+    "endShift": "シフト終了",
+    "history": "シフト履歴",
+    "noShift": "未開始",
+    "confirmEnd": "現在のシフトを終了しますか？"
+  }
+}

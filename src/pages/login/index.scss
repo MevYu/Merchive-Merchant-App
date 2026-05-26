@@ -1,0 +1,4 @@
+/* Login page styles are inlined on the JSX since the form is small and
+ * the toolchain doesn't ship cssModules. This file exists for parity
+ * with miniapp's per-page .scss convention so the linter / future
+ * Taro-CLI scaffolders don't complain. */

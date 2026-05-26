@@ -1,0 +1,9 @@
+/* Global background — matches the dashboard theme so login → home
+ * transitions don't flash white. Page-local styles override via inline
+ * styles to keep the bundle css-free (no cssModules toolchain pulled
+ * in). */
+page {
+  background: #0b1020;
+  color: #e6edf7;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}

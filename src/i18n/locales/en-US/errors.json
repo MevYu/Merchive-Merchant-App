@@ -1,0 +1,8 @@
+{
+  "network": "Network error, please retry",
+  "unauthorized": "Session expired, please sign in again",
+  "forbidden": "Not authorized",
+  "notFound": "Not found",
+  "server": "Server error",
+  "unknown": "Unknown error: {{msg}}"
+}

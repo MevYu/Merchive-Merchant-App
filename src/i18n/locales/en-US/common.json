@@ -1,0 +1,48 @@
+{
+  "brand": {
+    "title": "ChainEngine",
+    "subtitle": "Merchant Workspace",
+    "shortName": "Merchant"
+  },
+  "actions": {
+    "ok": "OK",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "save": "Save",
+    "back": "Back",
+    "next": "Next",
+    "prev": "Previous",
+    "loading": "Loading...",
+    "delete": "Delete",
+    "edit": "Edit",
+    "refresh": "Refresh",
+    "search": "Search",
+    "filter": "Filter"
+  },
+  "menu": {
+    "dashboard": "Dashboard",
+    "customers": "Customers",
+    "orders": "Place Order",
+    "recommend": "Recommend",
+    "handover": "Handover",
+    "logout": "Sign out",
+    "switchStore": "Switch store"
+  },
+  "role": {
+    "STORE_STAFF": "Guide",
+    "STORE_MGR": "Store Manager",
+    "FRANCHISEE": "Franchisee",
+    "TENANT_ADMIN": "Tenant Admin",
+    "OWNER": "Owner"
+  },
+  "lang": {
+    "zh-CN": "中文",
+    "en-US": "English",
+    "ja-JP": "日本語"
+  },
+  "auth": {
+    "wrongAccountTitle": "Merchant account required",
+    "wrongAccountBody": "This account is not a merchant-side account (guide / store manager / franchisee / owner). Please sign out and use a merchant account.",
+    "needLogin": "Please sign in first"
+  }
+}
