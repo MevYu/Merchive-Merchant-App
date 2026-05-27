@@ -1,14 +1,14 @@
 import Taro from '@tarojs/taro';
 
 // AuthBag is the persisted bearer-token bag for the merchant app.
-// Key differs from miniapp's ('chainengine-auth') so a single device
+// Key differs from miniapp's ('merchive-auth') so a single device
 // running both apps doesn't cross-contaminate sessions.
 export interface AuthBag {
   token: string | null;
   refresh: string | null;
 }
 
-const STORAGE_KEY = 'chainengine-merchant-auth';
+const STORAGE_KEY = 'merchive-merchant-auth';
 
 export class UnauthorizedError extends Error {
   constructor(msg = 'unauthorized') {

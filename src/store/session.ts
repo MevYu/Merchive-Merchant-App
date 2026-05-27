@@ -36,7 +36,7 @@ export interface SessionState {
   isAllowed: () => boolean;
 }
 
-const STORAGE_KEY = 'chainengine-merchant-session';
+const STORAGE_KEY = 'merchive-merchant-session';
 
 function inferChannel(): SessionState['channel'] {
   const env = Taro.getEnv();

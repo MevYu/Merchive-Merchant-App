@@ -1,13 +1,13 @@
 import path from 'path';
 
 // Taro build config for the merchant-end app. Independent from
-// chainengine-miniapp — different wx appid, different pages, no shared
+// merchive-miniapp — different wx appid, different pages, no shared
 // code (business is completely separate).
 //
 // P1 ships weapp + h5; rn (app) builds work the same Taro target but
 // require react-native + Android/iOS tooling that we don't bake into CI.
 export default {
-  projectName: 'chainengine-merchant-app',
+  projectName: 'merchive-merchant-app',
   date: '2026-05-26',
   designWidth: 750,
   deviceRatio: { '640': 2.34 / 2, '750': 1, '828': 1.81 / 2 },
@@ -21,7 +21,7 @@ export default {
   // compile.include forces babel-loader to walk ESM-only deps so their
   // `import` syntax is downleveled before webpack's parser sees it.
   // zustand + react ship .mjs that webpack would otherwise hand to its
-  // own parser at column 5. (Same footgun chainengine-miniapp hit.)
+  // own parser at column 5. (Same footgun merchive-miniapp hit.)
   compile: {
     include: [
       /node_modules[\\/]zustand[\\/]/,
@@ -55,7 +55,7 @@ export default {
   // Taro env entries land in DefinePlugin as `process.env.<KEY>`; values
   // MUST be JSON-encoded strings or DefinePlugin emits raw text that the
   // webpack parser chokes on at column 5 ("Unexpected token (1:5)" on
-  // every consumer). chainengine-miniapp hit this — don't repeat.
+  // every consumer). merchive-miniapp hit this — don't repeat.
   env: {
     TARO_APP_API_BASE: JSON.stringify(process.env.TARO_APP_API_BASE || 'http://localhost:8080/api/v1'),
     // TODO 待 user 配：商家端独立 weapp appid（不可复用 miniapp 消费者端的）

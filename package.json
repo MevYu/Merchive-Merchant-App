@@ -1,8 +1,8 @@
 {
-  "name": "chainengine-merchant-app",
+  "name": "merchive-merchant-app",
   "version": "0.1.0",
   "private": true,
-  "description": "ChainEngine 商家端 App（导购 / 店长 / 加盟商 / 老板 — Taro / 微信小程序 / H5 / App）",
+  "description": "Merchive 商家端 App（导购 / 店长 / 加盟商 / 老板 — Taro / 微信小程序 / H5 / App）",
   "scripts": {
     "build:weapp": "taro build --type weapp",
     "build:h5": "taro build --type h5",

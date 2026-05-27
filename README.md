@@ -1,10 +1,10 @@
-# ChainEngine Merchant App
+# Merchive Merchant App
 
-[![CI](https://img.shields.io/badge/CI-TODO-lightgrey.svg)](https://github.com/MevYu/ChainEngine-Merchant-App/actions)
+[![CI](https://img.shields.io/badge/CI-TODO-lightgrey.svg)](https://github.com/MevYu/Merchive-Merchant-App/actions)
 [![License](https://img.shields.io/badge/license-TODO-blue.svg)](./LICENSE)
 [![Lang](https://img.shields.io/badge/typescript-5.x-3178C6.svg)]()
 
-ChainEngine 商家端独立 mobile app — 导购 / 店长 / 加盟商 / 老板的随身工具。Taro 4 + React 18 + TypeScript，weapp / h5 / app 三端同构。第 14 仓（ADR-012）。
+Merchive 商家端独立 mobile app — 导购 / 店长 / 加盟商 / 老板的随身工具。Taro 4 + React 18 + TypeScript，weapp / h5 / app 三端同构。第 14 仓（ADR-012）。
 
 ## 技术栈
 
@@ -16,8 +16,8 @@ ChainEngine 商家端独立 mobile app — 导购 / 店长 / 加盟商 / 老板�
 ## 启动
 
 ```bash
-git clone https://github.com/MevYu/ChainEngine-Merchant-App.git
-cd ChainEngine-Merchant-App
+git clone https://github.com/MevYu/Merchive-Merchant-App.git
+cd Merchive-Merchant-App
 pnpm install
 
 # 配独立 weapp appid（不可复用消费者端 appid）
@@ -71,7 +71,7 @@ env 值都必须 `JSON.stringify` 包裹（DefinePlugin 原文注入 → webpack
 
 ## API 文档
 
-仅消费 chainengine-core REST API：[Core OpenAPI spec](https://github.com/MevYu/ChainEngine-Core/blob/main/docs/swagger/swagger.json)
+仅消费 merchive-core REST API：[Core OpenAPI spec](https://github.com/MevYu/Merchive-Core/blob/main/docs/swagger/swagger.json)
 
 P2 真接 endpoint：`/me/guide-stats` / `/shifts/*` / `/orders/preview` / `/me/recommend`（当前都 404 fallback 到 mock）。
 
@@ -88,11 +88,11 @@ session store 暴露 `currentRole()`（按 OWNER → TENANT_ADMIN → FRANCHISEE
 
 | 端 | 仓 | 角色 |
 |---|---|---|
-| 消费者端 mini app | chainengine-miniapp | MEMBER / GUEST |
-| **商家端 mobile app（本仓）** | **chainengine-merchant-app** | **STORE_STAFF / STORE_MGR / FRANCHISEE / TENANT_ADMIN / OWNER** |
-| 门店收银 | chainengine-pos | STORE_STAFF (Pad) |
-| 后台管理 | chainengine-admin-web | TENANT_ADMIN / OWNER (Web) |
-| 命令行 | chainengine-cli | DevOps / 平台运维 |
+| 消费者端 mini app | merchive-miniapp | MEMBER / GUEST |
+| **商家端 mobile app（本仓）** | **merchive-merchant-app** | **STORE_STAFF / STORE_MGR / FRANCHISEE / TENANT_ADMIN / OWNER** |
+| 门店收银 | merchive-pos | STORE_STAFF (Pad) |
+| 后台管理 | merchive-admin-web | TENANT_ADMIN / OWNER (Web) |
+| 命令行 | merchive-cli | DevOps / 平台运维 |
 
 商家端独立仓的原因（行业惯例：美团 / 有赞 / 微盟 / 抖音）：
 - 不同微信小程序 appid，不可混
@@ -102,11 +102,11 @@ session store 暴露 `currentRole()`（按 OWNER → TENANT_ADMIN → FRANCHISEE
 
 ## 相关仓
 
-- [`mevyu/chainengine-core`](https://github.com/MevYu/ChainEngine-Core) — REST API 供给方
-- [`mevyu/chainengine-ts-sdk`](https://github.com/MevYu/ChainEngine-TS-SDK) — 可替换 services 为 `@chainengine/sdk` + TaroHttpAdapter
-- [`mevyu/chainengine-design-tokens`](https://github.com/MevYu/ChainEngine-Design-Tokens) — 主色对齐 admin / pos / miniapp
-- [`mevyu/chainengine-miniapp`](https://github.com/MevYu/ChainEngine-Miniapp) — 消费者端（业务零重叠）
-- [`mevyu/chainengine-admin-web`](https://github.com/MevYu/ChainEngine-Admin-Web) — 后台管理（OWNER / TENANT_ADMIN 走 admin，权重操作走本仓简化版）
+- [`mevyu/merchive-core`](https://github.com/MevYu/Merchive-Core) — REST API 供给方
+- [`mevyu/merchive-ts-sdk`](https://github.com/MevYu/Merchive-TS-SDK) — 可替换 services 为 `@merchive/sdk` + TaroHttpAdapter
+- [`mevyu/merchive-design-tokens`](https://github.com/MevYu/Merchive-Design-Tokens) — 主色对齐 admin / pos / miniapp
+- [`mevyu/merchive-miniapp`](https://github.com/MevYu/Merchive-Miniapp) — 消费者端（业务零重叠）
+- [`mevyu/merchive-admin-web`](https://github.com/MevYu/Merchive-Admin-Web) — 后台管理（OWNER / TENANT_ADMIN 走 admin，权重操作走本仓简化版）
 
 ## Governance
 
@@ -129,8 +129,8 @@ session store 暴露 `currentRole()`（按 OWNER → TENANT_ADMIN → FRANCHISEE
 
 - 不引入新 UI 库（用 Taro 自带 `View/Text/Input/ScrollView`）
 - 不引入重图表库（echarts 等 P2 再说）
-- 不与 chainengine-miniapp 共代码（即便都是 Taro，业务完全独立）
-- 不动 chainengine-miniapp / chainengine-admin-web / chainengine-core 任何文件
+- 不与 merchive-miniapp 共代码（即便都是 Taro，业务完全独立）
+- 不动 merchive-miniapp / merchive-admin-web / merchive-core 任何文件
 - weapp appid 不替决（必须 user 配）
 
 ## License
