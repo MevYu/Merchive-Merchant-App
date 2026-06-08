@@ -27,13 +27,15 @@ export default function SkuPicker({ onAdd }: SkuPickerProps) {
   return (
     <View
       style={{
-        background: 'rgba(20, 28, 58, 0.6)',
-        borderRadius: '10px',
+        background: '#FFFFFF',
+        borderRadius: '16px',
+        border: '1px solid rgba(17,24,39,0.10)',
+        boxShadow: '0 1px 2px rgba(17,24,39,0.04)',
         padding: '12px',
         marginBottom: '8px',
       }}
     >
-      <Text style={{ display: 'block', color: '#aab3c8', fontSize: '12px', marginBottom: '6px' }}>
+      <Text style={{ display: 'block', color: '#6B7280', fontSize: '12px', marginBottom: '6px' }}>
         {t('pages:orders.addSku')}
       </Text>
       <View style={{ display: 'flex', gap: '8px' }}>
@@ -44,9 +46,10 @@ export default function SkuPicker({ onAdd }: SkuPickerProps) {
           style={{
             flex: 2,
             padding: '8px',
-            background: 'rgba(255,255,255,0.04)',
-            borderRadius: '6px',
-            color: '#e6edf7',
+            background: '#F4F6FB',
+            border: '1px solid rgba(17,24,39,0.10)',
+            borderRadius: '10px',
+            color: '#111827',
             fontSize: '13px',
           }}
         />
@@ -58,24 +61,25 @@ export default function SkuPicker({ onAdd }: SkuPickerProps) {
           style={{
             flex: 1,
             padding: '8px',
-            background: 'rgba(255,255,255,0.04)',
-            borderRadius: '6px',
-            color: '#e6edf7',
+            background: '#F4F6FB',
+            border: '1px solid rgba(17,24,39,0.10)',
+            borderRadius: '10px',
+            color: '#111827',
             fontSize: '13px',
           }}
         />
         <View
           onClick={submit}
           style={{
-            background: '#22d3ee',
-            color: '#0b1020',
+            background: '#3563F6',
+            color: '#F4F6FB',
             padding: '8px 14px',
-            borderRadius: '6px',
+            borderRadius: '12px',
             fontSize: '13px',
             fontWeight: 'bold',
           }}
         >
-          <Text style={{ color: '#0b1020' }}>+</Text>
+          <Text style={{ color: '#F4F6FB' }}>+</Text>
         </View>
       </View>
     </View>

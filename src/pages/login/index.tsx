@@ -56,18 +56,18 @@ export default function LoginPage() {
   };
 
   return (
-    <View style={{ background: '#0b1020', minHeight: '100vh', color: '#e6edf7', padding: '40px 24px' }}>
+    <View style={{ background: '#FAF8F4', minHeight: '100vh', color: '#111827', padding: '40px 24px' }}>
       <View style={{ textAlign: 'center', marginTop: '40px', marginBottom: '40px' }}>
-        <Text style={{ display: 'block', fontSize: '24px', fontWeight: 'bold', color: '#22d3ee' }}>
+        <Text style={{ display: 'block', fontSize: '24px', fontWeight: 'bold', color: '#0F1728' }}>
           {t('pages:login.title')}
         </Text>
-        <Text style={{ display: 'block', fontSize: '12px', color: '#6b7493', marginTop: '6px' }}>
+        <Text style={{ display: 'block', fontSize: '12px', color: '#6B7280', marginTop: '6px' }}>
           {t('pages:login.subtitle')}
         </Text>
       </View>
 
-      <View style={{ background: 'rgba(20, 28, 58, 0.6)', borderRadius: '12px', padding: '16px' }}>
-        <Text style={{ display: 'block', fontSize: '12px', color: '#aab3c8', marginBottom: '6px' }}>
+      <View style={{ background: '#FFFFFF', borderRadius: '16px', border: '1px solid rgba(17,24,39,0.10)', boxShadow: '0 1px 2px rgba(17,24,39,0.04)', padding: '16px' }}>
+        <Text style={{ display: 'block', fontSize: '12px', color: '#6B7280', marginBottom: '6px' }}>
           {t('pages:login.tenantLabel')}
         </Text>
         <Input
@@ -76,9 +76,10 @@ export default function LoginPage() {
           placeholder={t('pages:login.tenantPlaceholder')}
           style={{
             padding: '10px',
-            background: 'rgba(255,255,255,0.04)',
-            borderRadius: '6px',
-            color: '#e6edf7',
+            background: '#F4F6FB',
+            border: '1px solid rgba(17,24,39,0.10)',
+            borderRadius: '10px',
+            color: '#111827',
             fontSize: '14px',
           }}
         />
@@ -88,14 +89,14 @@ export default function LoginPage() {
         <View
           onClick={submitting ? undefined : handleWxLogin}
           style={{
-            background: submitting ? '#444' : '#22d3ee',
+            background: submitting ? '#C5CBD3' : '#3563F6',
             padding: '14px',
-            borderRadius: '24px',
+            borderRadius: '14px',
             textAlign: 'center',
             marginTop: '24px',
           }}
         >
-          <Text style={{ color: '#0b1020', fontWeight: 'bold', fontSize: '16px' }}>
+          <Text style={{ color: '#F4F6FB', fontWeight: 'bold', fontSize: '16px' }}>
             {submitting ? t('pages:login.loggingIn') : t('pages:login.wxLogin')}
           </Text>
         </View>
@@ -104,11 +105,11 @@ export default function LoginPage() {
           style={{
             marginTop: '24px',
             padding: '14px',
-            background: 'rgba(248,113,113,0.08)',
-            borderRadius: '8px',
+            background: 'rgba(220,38,38,0.08)',
+            borderRadius: '12px',
           }}
         >
-          <Text style={{ color: '#f87171', fontSize: '12px' }}>
+          <Text style={{ color: '#DC2626', fontSize: '12px' }}>
             {/* H5 / app login lands in P2. For dev: bake TARO_APP_LOCAL_DEV_TOKEN. */}
             H5 / App 登录 P2 上线（当前请在微信内打开，或使用 LOCAL_DEV_TOKEN）
           </Text>
@@ -116,13 +117,13 @@ export default function LoginPage() {
       )}
 
       {err && (
-        <View style={{ marginTop: '16px', padding: '10px', background: 'rgba(248,113,113,0.1)', borderRadius: '6px' }}>
-          <Text style={{ color: '#f87171', fontSize: '12px' }}>{err}</Text>
+        <View style={{ marginTop: '16px', padding: '10px', background: 'rgba(220,38,38,0.10)', borderRadius: '12px' }}>
+          <Text style={{ color: '#DC2626', fontSize: '12px' }}>{err}</Text>
         </View>
       )}
 
       <View style={{ marginTop: '40px', textAlign: 'center' }}>
-        <Text style={{ fontSize: '11px', color: '#6b7493' }}>{t('pages:login.policy')}</Text>
+        <Text style={{ fontSize: '11px', color: '#6B7280' }}>{t('pages:login.policy')}</Text>
       </View>
     </View>
   );

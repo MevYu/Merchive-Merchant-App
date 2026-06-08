@@ -59,11 +59,11 @@ export default function NewOrderPage() {
   };
 
   return (
-    <View style={{ minHeight: '100vh', background: '#0b1020', color: '#e6edf7' }}>
+    <View style={{ minHeight: '100vh', background: '#FAF8F4', color: '#111827' }}>
       <TopNav title={t('pages:orders.newNavTitle')} />
       <View style={{ display: 'flex', justifyContent: 'space-around', padding: '10px 0' }}>
         {[1, 2, 3].map((n) => (
-          <Text key={n} style={{ fontSize: '11px', color: step === n ? '#22d3ee' : '#6b7493' }}>
+          <Text key={n} style={{ fontSize: '11px', color: step === n ? '#3563F6' : '#6B7280' }}>
             {n}. {t(`pages:orders.step${n}` as const)}
           </Text>
         ))}
@@ -71,18 +71,18 @@ export default function NewOrderPage() {
 
       <ScrollView scrollY style={{ padding: '12px', height: 'calc(100vh - 130px)' }}>
         {step === 1 && (
-          <View style={{ background: 'rgba(20, 28, 58, 0.6)', borderRadius: '10px', padding: '14px' }}>
-            <Text style={{ display: 'block', fontSize: '12px', color: '#aab3c8', marginBottom: '6px' }}>
+          <View style={{ background: '#FFFFFF', borderRadius: '16px', border: '1px solid rgba(17,24,39,0.10)', boxShadow: '0 1px 2px rgba(17,24,39,0.04)', padding: '14px' }}>
+            <Text style={{ display: 'block', fontSize: '12px', color: '#6B7280', marginBottom: '6px' }}>
               {t('pages:orders.pickCustomer')}
             </Text>
             <Input
               value={memberInput}
               onInput={(e) => setMemberInput(e.detail.value)}
               placeholder="member_id"
-              style={{ padding: '10px', background: 'rgba(255,255,255,0.04)', borderRadius: '6px', color: '#e6edf7', fontSize: '14px' }}
+              style={{ padding: '10px', background: '#F4F6FB', border: '1px solid rgba(17,24,39,0.10)', borderRadius: '10px', color: '#111827', fontSize: '14px' }}
             />
-            <View onClick={confirmCustomer} style={{ marginTop: '14px', padding: '12px', background: '#22d3ee', borderRadius: '8px', textAlign: 'center' }}>
-              <Text style={{ color: '#0b1020', fontWeight: 'bold' }}>{t('common:actions.next')}</Text>
+            <View onClick={confirmCustomer} style={{ marginTop: '14px', padding: '12px', background: '#3563F6', borderRadius: '12px', textAlign: 'center' }}>
+              <Text style={{ color: '#F4F6FB', fontWeight: 'bold' }}>{t('common:actions.next')}</Text>
             </View>
           </View>
         )}
@@ -93,55 +93,55 @@ export default function NewOrderPage() {
             {draft.lines.map((l) => (
               <View
                 key={l.sku_id}
-                style={{ display: 'flex', justifyContent: 'space-between', padding: '10px', background: 'rgba(20, 28, 58, 0.6)', borderRadius: '8px', marginBottom: '6px' }}
+                style={{ display: 'flex', justifyContent: 'space-between', padding: '10px', background: '#FFFFFF', border: '1px solid rgba(17,24,39,0.10)', borderRadius: '12px', marginBottom: '6px' }}
               >
-                <Text style={{ color: '#e6edf7', fontSize: '13px' }}>{l.sku_id} × {l.qty}</Text>
-                <Text onClick={() => removeLine(l.sku_id)} style={{ color: '#f87171', fontSize: '12px' }}>
+                <Text style={{ color: '#111827', fontSize: '13px' }}>{l.sku_id} × {l.qty}</Text>
+                <Text onClick={() => removeLine(l.sku_id)} style={{ color: '#DC2626', fontSize: '12px' }}>
                   {t('common:actions.delete')}
                 </Text>
               </View>
             ))}
             <View style={{ display: 'flex', gap: '8px', marginTop: '12px' }}>
-              <View onClick={() => setStep(1)} style={{ flex: 1, padding: '12px', background: 'rgba(255,255,255,0.04)', borderRadius: '8px', textAlign: 'center' }}>
-                <Text style={{ color: '#aab3c8' }}>{t('common:actions.prev')}</Text>
+              <View onClick={() => setStep(1)} style={{ flex: 1, padding: '12px', background: '#FFFFFF', border: '1px solid rgba(17,24,39,0.10)', borderRadius: '12px', textAlign: 'center' }}>
+                <Text style={{ color: '#6B7280' }}>{t('common:actions.prev')}</Text>
               </View>
               <View
                 onClick={() => draft.lines.length > 0 && setStep(3)}
-                style={{ flex: 1, padding: '12px', background: draft.lines.length > 0 ? '#22d3ee' : '#444', borderRadius: '8px', textAlign: 'center' }}
+                style={{ flex: 1, padding: '12px', background: draft.lines.length > 0 ? '#3563F6' : '#C5CBD3', borderRadius: '12px', textAlign: 'center' }}
               >
-                <Text style={{ color: '#0b1020', fontWeight: 'bold' }}>{t('common:actions.next')}</Text>
+                <Text style={{ color: '#F4F6FB', fontWeight: 'bold' }}>{t('common:actions.next')}</Text>
               </View>
             </View>
           </>
         )}
 
         {step === 3 && draft && (
-          <View style={{ background: 'rgba(20, 28, 58, 0.6)', borderRadius: '10px', padding: '14px' }}>
-            <Text style={{ display: 'block', color: '#aab3c8', fontSize: '12px', marginBottom: '6px' }}>
+          <View style={{ background: '#FFFFFF', borderRadius: '16px', border: '1px solid rgba(17,24,39,0.10)', boxShadow: '0 1px 2px rgba(17,24,39,0.04)', padding: '14px' }}>
+            <Text style={{ display: 'block', color: '#6B7280', fontSize: '12px', marginBottom: '6px' }}>
               {t('pages:orders.discountPreview')}
             </Text>
-            {loading && <Text style={{ color: '#6b7493', fontSize: '12px' }}>{t('common:actions.loading')}</Text>}
+            {loading && <Text style={{ color: '#6B7280', fontSize: '12px' }}>{t('common:actions.loading')}</Text>}
             {preview && (
               <>
                 <View style={{ display: 'flex', justifyContent: 'space-between', marginTop: '4px' }}>
-                  <Text style={{ color: '#6b7493', fontSize: '12px' }}>{t('pages:orders.subtotal')}</Text>
-                  <Text style={{ color: '#e6edf7', fontSize: '12px' }}>¥{formatYuan(preview.subtotal)}</Text>
+                  <Text style={{ color: '#6B7280', fontSize: '12px' }}>{t('pages:orders.subtotal')}</Text>
+                  <Text style={{ color: '#111827', fontSize: '12px' }}>¥{formatYuan(preview.subtotal)}</Text>
                 </View>
                 <View style={{ display: 'flex', justifyContent: 'space-between', marginTop: '4px' }}>
-                  <Text style={{ color: '#6b7493', fontSize: '12px' }}>{t('pages:orders.discount')}</Text>
-                  <Text style={{ color: '#fbbf24', fontSize: '12px' }}>-¥{formatYuan(preview.discount)}</Text>
+                  <Text style={{ color: '#6B7280', fontSize: '12px' }}>{t('pages:orders.discount')}</Text>
+                  <Text style={{ color: '#A88249', fontSize: '12px' }}>-¥{formatYuan(preview.discount)}</Text>
                 </View>
-                <View style={{ display: 'flex', justifyContent: 'space-between', marginTop: '8px', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '8px' }}>
-                  <Text style={{ color: '#aab3c8', fontSize: '13px' }}>{t('pages:orders.total')}</Text>
-                  <Text style={{ color: '#22d3ee', fontSize: '15px', fontWeight: 'bold' }}>¥{formatYuan(preview.total)}</Text>
+                <View style={{ display: 'flex', justifyContent: 'space-between', marginTop: '8px', borderTop: '1px solid rgba(17,24,39,0.10)', paddingTop: '8px' }}>
+                  <Text style={{ color: '#6B7280', fontSize: '13px' }}>{t('pages:orders.total')}</Text>
+                  <Text style={{ color: '#3563F6', fontSize: '15px', fontWeight: 'bold' }}>¥{formatYuan(preview.total)}</Text>
                 </View>
               </>
             )}
             <View
               onClick={loading ? undefined : onSubmit}
-              style={{ marginTop: '16px', padding: '14px', background: loading ? '#444' : '#22d3ee', borderRadius: '24px', textAlign: 'center' }}
+              style={{ marginTop: '16px', padding: '14px', background: loading ? '#C5CBD3' : '#3563F6', borderRadius: '14px', textAlign: 'center' }}
             >
-              <Text style={{ color: '#0b1020', fontWeight: 'bold' }}>
+              <Text style={{ color: '#F4F6FB', fontWeight: 'bold' }}>
                 {loading ? t('common:actions.loading') : t('pages:orders.submit')}
               </Text>
             </View>

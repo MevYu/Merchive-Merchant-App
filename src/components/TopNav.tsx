@@ -28,24 +28,24 @@ export default function TopNav({ title }: TopNavProps) {
         alignItems: 'center',
         justifyContent: 'space-between',
         padding: '14px 16px',
-        background: '#0b1020',
-        color: '#e6edf7',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        background: '#0F1728',
+        color: '#F4F6FB',
+        borderBottom: '1px solid rgba(255,255,255,0.08)',
       }}
     >
       <View>
         <Text style={{ display: 'block', fontSize: '16px', fontWeight: 'bold' }}>
           {title || t('common:brand.title')}
         </Text>
-        <Text style={{ display: 'block', fontSize: '11px', color: '#6b7493', marginTop: '2px' }}>
+        <Text style={{ display: 'block', fontSize: '11px', color: 'rgba(244,246,251,0.6)', marginTop: '2px' }}>
           {display_name || '—'} {roleLabel ? `· ${roleLabel}` : ''}
         </Text>
       </View>
       <View style={{ textAlign: 'right' }}>
-        <Text style={{ display: 'block', fontSize: '11px', color: '#6b7493' }}>
+        <Text style={{ display: 'block', fontSize: '11px', color: 'rgba(244,246,251,0.6)' }}>
           {t('common:menu.switchStore')}
         </Text>
-        <Text style={{ display: 'block', fontSize: '12px', color: '#22d3ee' }}>
+        <Text style={{ display: 'block', fontSize: '12px', color: '#5D84FF' }}>
           {currentStoreId || '—'}
         </Text>
       </View>

@@ -33,8 +33,10 @@ function TrendChart({ data }: { data: { day: string; sales: number }[] }) {
   return (
     <View
       style={{
-        background: 'rgba(20, 28, 58, 0.6)',
-        borderRadius: '10px',
+        background: '#FFFFFF',
+        borderRadius: '16px',
+        border: '1px solid rgba(17,24,39,0.10)',
+        boxShadow: '0 1px 2px rgba(17,24,39,0.04)',
         padding: '10px',
         marginTop: '8px',
       }}
@@ -45,12 +47,12 @@ function TrendChart({ data }: { data: { day: string; sales: number }[] }) {
       <View
         dangerouslySetInnerHTML={{
           __html: `<svg viewBox="0 0 ${w} ${h}" width="100%" height="${h}" xmlns="http://www.w3.org/2000/svg">
-            <polyline points="${pts}" fill="none" stroke="#22d3ee" stroke-width="2"/>
+            <polyline points="${pts}" fill="none" stroke="#3563F6" stroke-width="2"/>
             ${data
               .map((d, i) => {
                 const x = pad + step * i;
                 const y = h - pad - ((h - pad * 2) * d.sales) / max;
-                return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.5" fill="#22d3ee"/>`;
+                return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.5" fill="#3563F6"/>`;
               })
               .join('')}
           </svg>`,
@@ -58,7 +60,7 @@ function TrendChart({ data }: { data: { day: string; sales: number }[] }) {
       />
       <View style={{ display: 'flex', justifyContent: 'space-between', marginTop: '4px' }}>
         {data.map((d) => (
-          <Text key={d.day} style={{ fontSize: '10px', color: '#6b7493' }}>{d.day}</Text>
+          <Text key={d.day} style={{ fontSize: '10px', color: '#6B7280' }}>{d.day}</Text>
         ))}
       </View>
     </View>
@@ -90,60 +92,60 @@ export default function DashboardPage() {
   const nav = (url: string) => Taro.navigateTo({ url }).catch(() => undefined);
 
   return (
-    <View style={{ minHeight: '100vh', background: '#0b1020', color: '#e6edf7' }}>
+    <View style={{ minHeight: '100vh', background: '#FAF8F4', color: '#111827' }}>
       <TopNav title={t('pages:dashboard.navTitle')} />
       <ScrollView scrollY style={{ padding: '12px', height: '100vh', boxSizing: 'border-box' }}>
         <View style={{ padding: '8px 4px' }}>
-          <Text style={{ fontSize: '14px', color: '#aab3c8' }}>
+          <Text style={{ fontSize: '14px', color: '#6B7280' }}>
             {t(`pages:dashboard.${greeting}` as const)}，{display_name || ''}
           </Text>
         </View>
 
         {usingMock && (
-          <View style={{ padding: '6px 10px', background: 'rgba(251,191,36,0.1)', borderRadius: '6px', marginBottom: '8px' }}>
-            <Text style={{ fontSize: '10px', color: '#fbbf24' }}>{t('pages:dashboard.mockBanner')}</Text>
+          <View style={{ padding: '6px 10px', background: 'rgba(168,130,73,0.10)', borderRadius: '10px', marginBottom: '8px' }}>
+            <Text style={{ fontSize: '10px', color: '#A88249' }}>{t('pages:dashboard.mockBanner')}</Text>
           </View>
         )}
 
-        <Text style={{ display: 'block', fontSize: '13px', color: '#aab3c8', margin: '8px 4px' }}>
+        <Text style={{ display: 'block', fontSize: '13px', color: '#6B7280', margin: '8px 4px' }}>
           {t('pages:dashboard.todayKpi')}
         </Text>
         <View style={{ display: 'flex', flexWrap: 'wrap' }}>
           <KpiCard label={t('pages:dashboard.kpi.sales')} value={`¥${formatYuan(stats.today.sales)}`} />
-          <KpiCard label={t('pages:dashboard.kpi.customers')} value={String(stats.today.customers)} accent="#fbbf24" />
+          <KpiCard label={t('pages:dashboard.kpi.customers')} value={String(stats.today.customers)} accent="#A88249" />
         </View>
         <View style={{ display: 'flex', flexWrap: 'wrap' }}>
-          <KpiCard label={t('pages:dashboard.kpi.orders')} value={String(stats.today.orders)} accent="#a3e635" />
-          <KpiCard label={t('pages:dashboard.kpi.aov')} value={`¥${formatYuan(stats.today.aov)}`} accent="#f87171" />
+          <KpiCard label={t('pages:dashboard.kpi.orders')} value={String(stats.today.orders)} accent="#3563F6" />
+          <KpiCard label={t('pages:dashboard.kpi.aov')} value={`¥${formatYuan(stats.today.aov)}`} accent="#111827" />
         </View>
 
-        <Text style={{ display: 'block', fontSize: '13px', color: '#aab3c8', margin: '12px 4px 0' }}>
+        <Text style={{ display: 'block', fontSize: '13px', color: '#6B7280', margin: '12px 4px 0' }}>
           {t('pages:dashboard.weekTrend')}
         </Text>
         <TrendChart data={stats.week_trend} />
 
         <View style={{ display: 'flex', gap: '8px', marginTop: '12px' }}>
-          <View style={{ flex: 1, background: 'rgba(20, 28, 58, 0.6)', borderRadius: '10px', padding: '10px' }}>
-            <Text style={{ fontSize: '11px', color: '#aab3c8' }}>{t('pages:dashboard.ranking')}</Text>
-            <Text style={{ display: 'block', fontSize: '12px', color: '#22d3ee', marginTop: '4px' }}>
+          <View style={{ flex: 1, background: '#FFFFFF', borderRadius: '16px', border: '1px solid rgba(17,24,39,0.10)', boxShadow: '0 1px 2px rgba(17,24,39,0.04)', padding: '10px' }}>
+            <Text style={{ fontSize: '11px', color: '#6B7280' }}>{t('pages:dashboard.ranking')}</Text>
+            <Text style={{ display: 'block', fontSize: '12px', color: '#3563F6', marginTop: '4px' }}>
               {t('pages:dashboard.rankStore', { n: stats.rank.store })}
             </Text>
-            <Text style={{ display: 'block', fontSize: '12px', color: '#22d3ee' }}>
+            <Text style={{ display: 'block', fontSize: '12px', color: '#3563F6' }}>
               {t('pages:dashboard.rankMe', { n: stats.rank.me })}
             </Text>
           </View>
         </View>
 
-        <Text style={{ display: 'block', fontSize: '13px', color: '#aab3c8', margin: '12px 4px 4px' }}>
+        <Text style={{ display: 'block', fontSize: '13px', color: '#6B7280', margin: '12px 4px 4px' }}>
           {t('pages:dashboard.tasks')}
         </Text>
         <View style={{ display: 'flex', flexWrap: 'wrap' }}>
-          <KpiCard label={t('pages:dashboard.task.callback')} value={String(stats.tasks.callback)} accent="#f87171" />
-          <KpiCard label={t('pages:dashboard.task.pickup')} value={String(stats.tasks.pickup)} accent="#fbbf24" />
-          <KpiCard label={t('pages:dashboard.task.shipping')} value={String(stats.tasks.shipping)} accent="#a3e635" />
+          <KpiCard label={t('pages:dashboard.task.callback')} value={String(stats.tasks.callback)} accent="#DC2626" />
+          <KpiCard label={t('pages:dashboard.task.pickup')} value={String(stats.tasks.pickup)} accent="#A88249" />
+          <KpiCard label={t('pages:dashboard.task.shipping')} value={String(stats.tasks.shipping)} accent="#3563F6" />
         </View>
 
-        <Text style={{ display: 'block', fontSize: '13px', color: '#aab3c8', margin: '12px 4px 4px' }}>
+        <Text style={{ display: 'block', fontSize: '13px', color: '#6B7280', margin: '12px 4px 4px' }}>
           {t('pages:dashboard.shortcuts')}
         </Text>
         <View style={{ display: 'flex', flexWrap: 'wrap' }}>
@@ -158,14 +160,16 @@ export default function DashboardPage() {
               onClick={() => nav(it.url)}
               style={{
                 flex: '0 0 calc(50% - 8px)',
-                background: 'rgba(20, 28, 58, 0.6)',
-                borderRadius: '10px',
+                background: '#FFFFFF',
+                borderRadius: '16px',
+                border: '1px solid rgba(17,24,39,0.10)',
+                boxShadow: '0 1px 2px rgba(17,24,39,0.04)',
                 padding: '14px',
                 margin: '4px',
                 textAlign: 'center',
               }}
             >
-              <Text style={{ color: '#22d3ee', fontSize: '14px', fontWeight: 'bold' }}>
+              <Text style={{ color: '#3563F6', fontSize: '14px', fontWeight: 'bold' }}>
                 {t(`common:menu.${it.k}` as const)}
               </Text>
             </View>

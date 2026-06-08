@@ -43,7 +43,7 @@ export default function RecommendPage() {
   }, [initial]);
 
   return (
-    <View style={{ minHeight: '100vh', background: '#0b1020', color: '#e6edf7' }}>
+    <View style={{ minHeight: '100vh', background: '#FAF8F4', color: '#111827' }}>
       <TopNav title={t('pages:recommend.navTitle')} />
       <View style={{ padding: '12px' }}>
         <View style={{ display: 'flex', gap: '8px' }}>
@@ -54,14 +54,15 @@ export default function RecommendPage() {
             style={{
               flex: 1,
               padding: '10px',
-              background: 'rgba(255,255,255,0.04)',
-              borderRadius: '6px',
-              color: '#e6edf7',
+              background: '#FFFFFF',
+              border: '1px solid rgba(17,24,39,0.10)',
+              borderRadius: '10px',
+              color: '#111827',
               fontSize: '14px',
             }}
           />
-          <View onClick={run} style={{ padding: '10px 14px', background: '#22d3ee', borderRadius: '6px' }}>
-            <Text style={{ color: '#0b1020', fontWeight: 'bold', fontSize: '13px' }}>
+          <View onClick={run} style={{ padding: '10px 14px', background: '#3563F6', borderRadius: '12px' }}>
+            <Text style={{ color: '#F4F6FB', fontWeight: 'bold', fontSize: '13px' }}>
               {t('pages:recommend.go')}
             </Text>
           </View>
@@ -70,18 +71,18 @@ export default function RecommendPage() {
 
       <ScrollView scrollY style={{ padding: '0 12px', height: 'calc(100vh - 140px)' }}>
         {err && (
-          <View style={{ padding: '10px', background: 'rgba(248,113,113,0.1)', borderRadius: '6px', marginBottom: '8px' }}>
-            <Text style={{ color: '#f87171', fontSize: '12px' }}>{err}</Text>
+          <View style={{ padding: '10px', background: 'rgba(220,38,38,0.10)', borderRadius: '12px', marginBottom: '8px' }}>
+            <Text style={{ color: '#DC2626', fontSize: '12px' }}>{err}</Text>
           </View>
         )}
-        {loading && <Text style={{ color: '#6b7493', fontSize: '12px' }}>{t('common:actions.loading')}</Text>}
+        {loading && <Text style={{ color: '#6B7280', fontSize: '12px' }}>{t('common:actions.loading')}</Text>}
         {!loading && items.length === 0 && (
-          <Text style={{ display: 'block', textAlign: 'center', color: '#6b7493', padding: '20px' }}>
+          <Text style={{ display: 'block', textAlign: 'center', color: '#6B7280', padding: '20px' }}>
             {t('pages:recommend.empty')}
           </Text>
         )}
         {items.length > 0 && (
-          <Text style={{ display: 'block', color: '#aab3c8', fontSize: '12px', margin: '4px 0 8px' }}>
+          <Text style={{ display: 'block', color: '#6B7280', fontSize: '12px', margin: '4px 0 8px' }}>
             {t('pages:recommend.resultTitle')}
           </Text>
         )}
@@ -89,27 +90,29 @@ export default function RecommendPage() {
           <View
             key={it.sku_id}
             style={{
-              background: 'rgba(20, 28, 58, 0.6)',
-              borderRadius: '10px',
+              background: '#FFFFFF',
+              borderRadius: '16px',
+              border: '1px solid rgba(17,24,39,0.10)',
+              boxShadow: '0 1px 2px rgba(17,24,39,0.04)',
               padding: '12px',
               marginBottom: '8px',
             }}
           >
             <View style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <Text style={{ color: '#e6edf7', fontSize: '14px', fontWeight: 'bold' }}>{it.name}</Text>
-              <Text style={{ color: '#22d3ee', fontSize: '14px' }}>¥{formatYuan(it.price)}</Text>
+              <Text style={{ color: '#111827', fontSize: '14px', fontWeight: 'bold' }}>{it.name}</Text>
+              <Text style={{ color: '#3563F6', fontSize: '14px' }}>¥{formatYuan(it.price)}</Text>
             </View>
             {it.reason && (
-              <Text style={{ display: 'block', color: '#6b7493', fontSize: '11px', marginTop: '4px' }}>
+              <Text style={{ display: 'block', color: '#6B7280', fontSize: '11px', marginTop: '4px' }}>
                 {it.reason}
               </Text>
             )}
             <View
               // TODO send: hook /im/send to push the SKU card into a
               // chat with the customer once IM lands.
-              style={{ marginTop: '8px', padding: '8px', background: 'rgba(34,211,238,0.1)', borderRadius: '6px', textAlign: 'center' }}
+              style={{ marginTop: '8px', padding: '8px', background: 'rgba(53,99,246,0.08)', borderRadius: '10px', textAlign: 'center' }}
             >
-              <Text style={{ color: '#22d3ee', fontSize: '11px' }}>{t('pages:recommend.send')}</Text>
+              <Text style={{ color: '#3563F6', fontSize: '11px' }}>{t('pages:recommend.send')}</Text>
             </View>
           </View>
         ))}

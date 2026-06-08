@@ -16,7 +16,7 @@ export default defineAppConfig({
   ],
   window: {
     backgroundTextStyle: 'light',
-    navigationBarBackgroundColor: '#0b1020',
+    navigationBarBackgroundColor: '#0F1728',
     navigationBarTitleText: 'Merchive 商家',
     navigationBarTextStyle: 'white',
   },
