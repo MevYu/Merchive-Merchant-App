@@ -6,6 +6,9 @@ import { hasAuth, UnauthorizedError } from '@/services/http';
 // Side-effect import: registers i18next + loads resources so the first
 // page sees translated strings without a flash of keys.
 import '@/i18n';
+// Theme tokens (short --primary/--text ... vars) from the central
+// @merchive/design-tokens package — single source of truth. Before app.scss.
+import '@merchive/design-tokens/web';
 import './app.scss';
 
 // App is the Taro root. Three responsibilities at boot:

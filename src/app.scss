@@ -1,20 +1,12 @@
 /* Global background — matches the dashboard theme so login → home
  * transitions don't flash white. Page-local styles override via inline
- * styles to keep the bundle css-free (no cssModules toolchain pulled
- * in). */
-:root {
-  --primary: #3563F6;
-  --primary-2: #5D84FF;
-  --accent: #A88249;
-  --danger: #DC2626;
-  --text: #111827;
-  --text-mute: #6B7280;
-  --ink: #0F1728;
-  --bg: #FAF8F4;
-  --bg-soft: #F4F6FB;
-  --bg-elev: #FFFFFF;
-  --border: #C5CBD3;
-}
+ * styles to keep the bundle css-free (no cssModules toolchain pulled in).
+ *
+ * The short --primary/--text/--bg ... vars now come from
+ * @merchive/design-tokens/web (imported in app.tsx) — single source of truth.
+ * NOTE: two values shift to the design-system canonical on adoption:
+ *   --bg-soft  #F4F6FB -> #F1EFE9   (off-white)
+ *   --border   #C5CBD3 -> rgba(17,24,39,0.10) (translucent ink) */
 
 page {
   background: var(--bg);
