@@ -11,12 +11,12 @@ export interface KpiCardProps {
   accent?: string;
 }
 
-export default function KpiCard({ label, value, hint, accent = '#3563F6' }: KpiCardProps) {
+export default function KpiCard({ label, value, hint, accent = 'var(--primary)' }: KpiCardProps) {
   return (
     <View
       style={{
         flex: 1,
-        background: '#FFFFFF',
+        background: 'var(--bg-elev)',
         borderRadius: '16px',
         border: '1px solid rgba(17,24,39,0.10)',
         boxShadow: '0 1px 2px rgba(17,24,39,0.04)',
@@ -25,7 +25,7 @@ export default function KpiCard({ label, value, hint, accent = '#3563F6' }: KpiC
         minWidth: 0,
       }}
     >
-      <Text style={{ display: 'block', fontSize: '11px', color: '#6B7280' }}>{label}</Text>
+      <Text style={{ display: 'block', fontSize: '11px', color: 'var(--text-mute)' }}>{label}</Text>
       <Text
         style={{
           display: 'block',
@@ -38,7 +38,7 @@ export default function KpiCard({ label, value, hint, accent = '#3563F6' }: KpiC
         {value}
       </Text>
       {hint && (
-        <Text style={{ display: 'block', fontSize: '10px', color: '#6B7280', marginTop: '2px' }}>
+        <Text style={{ display: 'block', fontSize: '10px', color: 'var(--text-mute)', marginTop: '2px' }}>
           {hint}
         </Text>
       )}

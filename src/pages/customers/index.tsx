@@ -37,7 +37,7 @@ export default function CustomersPage() {
     );
 
   return (
-    <View style={{ minHeight: '100vh', background: '#FAF8F4', color: '#111827' }}>
+    <View style={{ minHeight: '100vh', background: 'var(--bg)', color: 'var(--text)' }}>
       <TopNav title={t('pages:customers.navTitle')} />
       <View style={{ padding: '12px' }}>
         <View style={{ display: 'flex', gap: '8px' }}>
@@ -50,10 +50,10 @@ export default function CustomersPage() {
             style={{
               flex: 1,
               padding: '10px',
-              background: '#FFFFFF',
+              background: 'var(--bg-elev)',
               border: '1px solid rgba(17,24,39,0.10)',
               borderRadius: '10px',
-              color: '#111827',
+              color: 'var(--text)',
               fontSize: '14px',
             }}
           />
@@ -61,11 +61,11 @@ export default function CustomersPage() {
             onClick={() => load({ q: q || undefined })}
             style={{
               padding: '10px 14px',
-              background: '#3563F6',
+              background: 'var(--primary)',
               borderRadius: '12px',
             }}
           >
-            <Text style={{ color: '#F4F6FB', fontWeight: 'bold', fontSize: '13px' }}>
+            <Text style={{ color: 'var(--bg-soft)', fontWeight: 'bold', fontSize: '13px' }}>
               {t('common:actions.search')}
             </Text>
           </View>
@@ -79,11 +79,11 @@ export default function CustomersPage() {
               style={{
                 padding: '6px 12px',
                 borderRadius: '14px',
-                background: filter === f ? '#3563F6' : '#FFFFFF',
+                background: filter === f ? 'var(--primary)' : 'var(--bg-elev)',
                 border: filter === f ? 'none' : '1px solid rgba(17,24,39,0.10)',
               }}
             >
-              <Text style={{ color: filter === f ? '#F4F6FB' : '#6B7280', fontSize: '12px' }}>
+              <Text style={{ color: filter === f ? 'var(--bg-soft)' : 'var(--text-mute)', fontSize: '12px' }}>
                 {t(
                   f === 'all'
                     ? 'pages:customers.filterAll'
@@ -99,12 +99,12 @@ export default function CustomersPage() {
 
       <ScrollView scrollY style={{ flex: 1, padding: '0 12px', height: 'calc(100vh - 180px)' }}>
         {loading && (
-          <Text style={{ display: 'block', textAlign: 'center', color: '#6B7280', padding: '20px' }}>
+          <Text style={{ display: 'block', textAlign: 'center', color: 'var(--text-mute)', padding: '20px' }}>
             {t('common:actions.loading')}
           </Text>
         )}
         {!loading && items.length === 0 && (
-          <Text style={{ display: 'block', textAlign: 'center', color: '#6B7280', padding: '20px' }}>
+          <Text style={{ display: 'block', textAlign: 'center', color: 'var(--text-mute)', padding: '20px' }}>
             {t('pages:customers.empty')}
           </Text>
         )}
