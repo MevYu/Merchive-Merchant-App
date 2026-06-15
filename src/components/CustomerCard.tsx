@@ -6,10 +6,10 @@ import type { Customer } from '@/services/customer';
 // presentational so the page can wrap it with onClick for nav.
 
 const LEVEL_COLOR: Record<NonNullable<Customer['level_tag']>, string> = {
-  L1: '#6B7280',
-  L2: '#3563F6',
-  L3: '#A88249',
-  L4: '#DC2626',
+  L1: 'var(--text-mute)',
+  L2: 'var(--primary)',
+  L3: 'var(--accent)',
+  L4: 'var(--danger)',
 };
 
 export interface CustomerCardProps {
@@ -24,7 +24,7 @@ export default function CustomerCard({ customer, onClick }: CustomerCardProps) {
     <View
       onClick={onClick}
       style={{
-        background: '#FFFFFF',
+        background: 'var(--bg-elev)',
         borderRadius: '16px',
         border: '1px solid rgba(17,24,39,0.10)',
         boxShadow: '0 1px 2px rgba(17,24,39,0.04)',
@@ -33,7 +33,7 @@ export default function CustomerCard({ customer, onClick }: CustomerCardProps) {
       }}
     >
       <View style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Text style={{ color: '#111827', fontSize: '15px', fontWeight: 'bold' }}>
+        <Text style={{ color: 'var(--text)', fontSize: '15px', fontWeight: 'bold' }}>
           {customer.name || customer.phone || customer.id}
         </Text>
         {lvl && (
@@ -43,11 +43,11 @@ export default function CustomerCard({ customer, onClick }: CustomerCardProps) {
         )}
       </View>
       <View style={{ display: 'flex', justifyContent: 'space-between', marginTop: '6px' }}>
-        <Text style={{ color: '#6B7280', fontSize: '11px' }}>
+        <Text style={{ color: 'var(--text-mute)', fontSize: '11px' }}>
           {customer.phone || '—'}
         </Text>
         {customer.pending_followup && (
-          <Text style={{ color: '#DC2626', fontSize: '11px' }}>● {t('pages:customers.filterFollow')}</Text>
+          <Text style={{ color: 'var(--danger)', fontSize: '11px' }}>● {t('pages:customers.filterFollow')}</Text>
         )}
       </View>
     </View>

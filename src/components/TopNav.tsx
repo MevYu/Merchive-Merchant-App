@@ -28,8 +28,8 @@ export default function TopNav({ title }: TopNavProps) {
         alignItems: 'center',
         justifyContent: 'space-between',
         padding: '14px 16px',
-        background: '#0F1728',
-        color: '#F4F6FB',
+        background: 'var(--ink)',
+        color: 'var(--bg-soft)',
         borderBottom: '1px solid rgba(255,255,255,0.08)',
       }}
     >
@@ -45,7 +45,7 @@ export default function TopNav({ title }: TopNavProps) {
         <Text style={{ display: 'block', fontSize: '11px', color: 'rgba(244,246,251,0.6)' }}>
           {t('common:menu.switchStore')}
         </Text>
-        <Text style={{ display: 'block', fontSize: '12px', color: '#5D84FF' }}>
+        <Text style={{ display: 'block', fontSize: '12px', color: 'var(--primary-2)' }}>
           {currentStoreId || '—'}
         </Text>
       </View>

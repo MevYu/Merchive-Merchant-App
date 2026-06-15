@@ -109,68 +109,68 @@ export default function HandoverPage() {
   };
 
   return (
-    <View style={{ minHeight: '100vh', background: '#FAF8F4', color: '#111827' }}>
+    <View style={{ minHeight: '100vh', background: 'var(--bg)', color: 'var(--text)' }}>
       <TopNav title={t('pages:handover.navTitle')} />
       <ScrollView scrollY style={{ padding: '12px', height: 'calc(100vh - 80px)' }}>
         {err && (
           <View style={{ padding: '10px', background: 'rgba(220,38,38,0.10)', borderRadius: '12px', marginBottom: '8px' }}>
-            <Text style={{ color: '#DC2626', fontSize: '12px' }}>{err}</Text>
+            <Text style={{ color: 'var(--danger)', fontSize: '12px' }}>{err}</Text>
           </View>
         )}
 
-        <View style={{ background: '#FFFFFF', borderRadius: '16px', border: '1px solid rgba(17,24,39,0.10)', boxShadow: '0 1px 2px rgba(17,24,39,0.04)', padding: '14px' }}>
-          <Text style={{ display: 'block', color: '#6B7280', fontSize: '12px' }}>
+        <View style={{ background: 'var(--bg-elev)', borderRadius: '16px', border: '1px solid rgba(17,24,39,0.10)', boxShadow: '0 1px 2px rgba(17,24,39,0.04)', padding: '14px' }}>
+          <Text style={{ display: 'block', color: 'var(--text-mute)', fontSize: '12px' }}>
             {t('pages:handover.currentShift')}
           </Text>
           {current ? (
             <>
-              <Text style={{ display: 'block', color: '#3563F6', fontSize: '14px', marginTop: '6px' }}>
+              <Text style={{ display: 'block', color: 'var(--primary)', fontSize: '14px', marginTop: '6px' }}>
                 {t('pages:handover.startTime')}: {current.started_at} ({elapsedMinutes(current.started_at)}m)
               </Text>
               <View style={{ display: 'flex', justifyContent: 'space-between', marginTop: '8px' }}>
-                <Text style={{ color: '#6B7280', fontSize: '11px' }}>
+                <Text style={{ color: 'var(--text-mute)', fontSize: '11px' }}>
                   {t('pages:handover.sales')}: ¥{formatYuan(current.sales_amount ?? 0)}
                 </Text>
-                <Text style={{ color: '#6B7280', fontSize: '11px' }}>
+                <Text style={{ color: 'var(--text-mute)', fontSize: '11px' }}>
                   {t('pages:handover.orders')}: {current.order_count ?? 0}
                 </Text>
               </View>
-              <Text style={{ display: 'block', color: '#A88249', fontSize: '12px', marginTop: '4px' }}>
+              <Text style={{ display: 'block', color: 'var(--accent)', fontSize: '12px', marginTop: '4px' }}>
                 {t('pages:handover.cash')}: ¥{formatYuan(current.cash_expected ?? 0)}
               </Text>
               <View
                 onClick={end}
-                style={{ marginTop: '14px', padding: '12px', background: '#DC2626', borderRadius: '12px', textAlign: 'center' }}
+                style={{ marginTop: '14px', padding: '12px', background: 'var(--danger)', borderRadius: '12px', textAlign: 'center' }}
               >
-                <Text style={{ color: '#F4F6FB', fontWeight: 'bold' }}>{t('pages:handover.endShift')}</Text>
+                <Text style={{ color: 'var(--bg-soft)', fontWeight: 'bold' }}>{t('pages:handover.endShift')}</Text>
               </View>
             </>
           ) : (
             <>
-              <Text style={{ display: 'block', color: '#6B7280', fontSize: '12px', marginTop: '6px' }}>
+              <Text style={{ display: 'block', color: 'var(--text-mute)', fontSize: '12px', marginTop: '6px' }}>
                 {t('pages:handover.noShift')}
               </Text>
               <View
                 onClick={start}
-                style={{ marginTop: '14px', padding: '12px', background: '#3563F6', borderRadius: '12px', textAlign: 'center' }}
+                style={{ marginTop: '14px', padding: '12px', background: 'var(--primary)', borderRadius: '12px', textAlign: 'center' }}
               >
-                <Text style={{ color: '#F4F6FB', fontWeight: 'bold' }}>{t('pages:handover.startShift')}</Text>
+                <Text style={{ color: 'var(--bg-soft)', fontWeight: 'bold' }}>{t('pages:handover.startShift')}</Text>
               </View>
             </>
           )}
         </View>
 
-        <Text style={{ display: 'block', fontSize: '13px', color: '#6B7280', margin: '16px 4px 8px' }}>
+        <Text style={{ display: 'block', fontSize: '13px', color: 'var(--text-mute)', margin: '16px 4px 8px' }}>
           {t('pages:handover.history')}
         </Text>
         {history.map((h) => (
           <View
             key={h.id}
-            style={{ background: '#FFFFFF', borderRadius: '16px', border: '1px solid rgba(17,24,39,0.10)', boxShadow: '0 1px 2px rgba(17,24,39,0.04)', padding: '10px', marginBottom: '6px' }}
+            style={{ background: 'var(--bg-elev)', borderRadius: '16px', border: '1px solid rgba(17,24,39,0.10)', boxShadow: '0 1px 2px rgba(17,24,39,0.04)', padding: '10px', marginBottom: '6px' }}
           >
             <View style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <Text style={{ color: '#111827', fontSize: '12px' }}>{h.started_at}</Text>
-              <Text style={{ color: '#3563F6', fontSize: '12px' }}>¥{formatYuan(h.sales_amount ?? 0)}</Text>
+              <Text style={{ color: 'var(--text)', fontSize: '12px' }}>{h.started_at}</Text>
+              <Text style={{ color: 'var(--primary)', fontSize: '12px' }}>¥{formatYuan(h.sales_amount ?? 0)}</Text>
             </View>
           </View>
         ))}

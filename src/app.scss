@@ -2,8 +2,22 @@
  * transitions don't flash white. Page-local styles override via inline
  * styles to keep the bundle css-free (no cssModules toolchain pulled
  * in). */
+:root {
+  --primary: #3563F6;
+  --primary-2: #5D84FF;
+  --accent: #A88249;
+  --danger: #DC2626;
+  --text: #111827;
+  --text-mute: #6B7280;
+  --ink: #0F1728;
+  --bg: #FAF8F4;
+  --bg-soft: #F4F6FB;
+  --bg-elev: #FFFFFF;
+  --border: #C5CBD3;
+}
+
 page {
-  background: #FAF8F4;
-  color: #111827;
+  background: var(--bg);
+  color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
 }
