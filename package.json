@@ -13,6 +13,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@merchive/design-tokens": "^0.2.0",
     "@tarojs/components": "^4.0.0",
     "@tarojs/plugin-framework-react": "^4.0.0",
     "@tarojs/runtime": "^4.0.0",
